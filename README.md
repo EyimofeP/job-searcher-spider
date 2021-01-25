@@ -2,6 +2,8 @@
 ### Built with BeautifulSoup, Requests and ❤
 #### A python script that collects info about job skills and presents available jobs 
 ___
+#### Scrapes data from first page of [Time's Job](www.timesjobs.com)
+___
 #### An extension from [FreeCodeCamp's WebScraping Course](https://www.youtube.com/watch?v=XVv6mJpFOb0)
 ___
 
