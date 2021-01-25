@@ -38,6 +38,9 @@ soup = BeautifulSoup(url, "lxml")
 # Fetch Job Posting Div
 jobs = soup.find_all("li", class_="clearfix job-bx wht-shd-bx")
 
+# Counting Number of Jobs
+
+serial_number = 1
 for job in jobs:
     # Date Posted
     date_posted = job.find("span", class_="sim-posted").text
@@ -64,12 +67,14 @@ for job in jobs:
                 # Job Link
                 link = job.header.h2.a["href"]
 
+                print(f"No {serial_number}")
                 print(f"Job Title: {title}")
                 print(f"Job Company: {company}")
                 print(f"Job Location: {location}")
                 print(f"Job Skills: {skills}")
                 print(f"Job Link: {link}")
                 print()
+                serial_number += 1
 
     else:
         # Checking if job posting is fresh
@@ -88,9 +93,11 @@ for job in jobs:
             # Job Link
             link = job.header.h2.a["href"]
 
+            print(f"No {serial_number}")
             print(f"Job Title: {title}")
             print(f"Job Company: {company}")
             print(f"Job Location: {location}")
             print(f"Job Skills: {skills}")
             print(f"Job Link: {link}")
             print()
+            serial_number += 1

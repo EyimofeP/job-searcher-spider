@@ -22,7 +22,7 @@ csv_file = open("job-search.csv", "w")
 csv_writer = csv.writer(csv_file)
 
 # Create Row Headings
-csv_writer.writerow(["Title", "Company", "Location", "Skills", "Link"])
+csv_writer.writerow(["S/N", "Title", "Company", "Location", "Skills", "Link"])
 
 # Ask If you User wants specific skills
 print(
@@ -47,6 +47,9 @@ soup = BeautifulSoup(url, "lxml")
 
 # Fetch Job Posting Div
 jobs = soup.find_all("li", class_="clearfix job-bx wht-shd-bx")
+
+# Count Range of Jobs
+serial_number = 1
 
 for job in jobs:
     # Date Posted
@@ -78,7 +81,8 @@ for job in jobs:
                 link = job.header.h2.a["href"]
 
                 csv_writer.writerow(
-                    [title, company, location, skills, link])
+                    [serial_number, title, company, location, skills, link])
+                serial_number += 1
 
     else:
         # Checking if job posting is fresh
@@ -101,7 +105,8 @@ for job in jobs:
             link = job.header.h2.a["href"]
 
             csv_writer.writerow(
-                [title, company, location, skills, link])
+                [serial_number, title, company, location, skills, link])
+            serial_number += 1
 
 print("CSV Created")
 csv_file.close()
