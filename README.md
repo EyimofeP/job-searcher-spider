@@ -8,9 +8,10 @@ ___
 ___
 
 1. app.py file is for terminal output
-2. csv-converter.py is stores the data in csv format
+2. csv-converter.py stores the data in csv format
 
 ___
+Specific Skills Question is Optional
 When asked for specific field user may input desired skills e.g
 
 If use typed Javascript Job, the prefered skills could be React or Vue
